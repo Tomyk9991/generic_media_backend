@@ -1,0 +1,8 @@
+/target
+/data
+/.env
+/src/database/migration.rs
+/.idea/
+/Cargo.lock
+/changelog
+deploy.sh

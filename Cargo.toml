@@ -1,0 +1,49 @@
+[package]
+name = "image_server_backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+strip = true
+
+[dependencies]
+anyhow = "1.0.71"
+async-trait = "0.1.71"
+
+actix-web = { version = "4.3.1" }
+
+reqwest = { version = "0.11.20", default-features = false, features = ["blocking", "json", "rustls-tls"]}
+regex = "1.9.1"
+
+uuid = { version = "1.4.0", features = ["v4"] }
+serde = { version = "1.0.171", features = ["derive"] }
+chrono = { version = "0.4.26", features = ["serde"] }
+env_logger = "*"
+log = "0.4.19"
+dotenv = "0.15.0"
+
+# Database
+mongodb = { version = "2.6.0", features = ["tokio-runtime", "bson-uuid-0_8", "bson-chrono-0_4"] }
+
+# Actix
+# Security
+actix-web-httpauth = "0.8.0"
+actix-cors = "0.6.4"
+
+hmac = "0.12.1"
+jwt = "0.16.0"
+sha2 = "0.10.7"
+actix-session = { version = "0.7.2", features = ["cookie-session"] }
+argon2 = "0.5.1"
+serde_json = "1.0.103"
+
+# Extensions
+actix-files = "0.6.2"
+actix-multipart = "0.6.0"
+mime = "0.3.17"
+
+
+futures-util = "0.3.25"
+tokio = { version = "1.29.1", features = ["fs"] }
